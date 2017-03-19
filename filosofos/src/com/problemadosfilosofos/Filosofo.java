@@ -11,6 +11,7 @@ public class Filosofo {
 
     public void comer() {
         satisfied++;
+        System.out.println("Filosofo: " + id + "comendo - " + satisfied);
         Util.sleep(Templo.periodoComer);
     }
 
@@ -18,4 +19,7 @@ public class Filosofo {
         return id;
     }
 
+    public long getSatisfied() {
+        return satisfied;
+    }
 }
