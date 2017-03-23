@@ -27,13 +27,13 @@ public class Templo {
             new Thread(() -> sobreviver(f)).start();
         }
 
-//        while (true) { // NOSONAR
-//            for (Filosofo f : filosofos) {
-//                System.out.println("Filosofo: " + f.getId() + "[" + f.getSatisfied() + "]");
-//            }
-//            System.out.println("");
-//            Util.sleep(periodoComer/2);
-//        }
+        while (true) { // NOSONAR
+            for (Filosofo f : filosofos) {
+                System.out.println("Filosofo " + f.getId() + ". Comeu " + f.getSatisfied());
+            }
+            System.out.println("");
+            Util.sleep(periodoComer);
+        }
     }
 
     private void sobreviver(Filosofo f) {
