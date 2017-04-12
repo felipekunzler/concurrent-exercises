@@ -4,7 +4,6 @@ public class Barbeiro {
 
     private final long sono;
     private final long atendimento;
-    private boolean dormindo;
 
     public Barbeiro(long sono, long atendimento) {
         this.sono = sono;
@@ -13,20 +12,13 @@ public class Barbeiro {
 
     public void dormir() {
         System.out.println("Barbeiro dormindo");
-        dormindo = true;
         Util.sleep(sono);
-        dormindo = false;
         System.out.println("Barbeiro acordou");
     }
 
     public void atender(Cliente cliente) {
-        System.out.println("Cliente sendo atendido: " + cliente);
-        cliente.setAtendido(true);
+        System.out.println("Cliente [" + cliente.getId() + "] sendo atendido");
         Util.sleep(atendimento);
-    }
-
-    public boolean isDormindo() {
-        return dormindo;
     }
 
 }

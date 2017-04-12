@@ -16,7 +16,7 @@ public class Barbearia {
                 Cliente cliente = cadeiras.remove();
                 barbeiro.atender(cliente);
             }
-            else { // uma maneira de evitar busy-waiting, busy-looping or spinning
+            else { // uma maneira de evitar busy-waiting/cpu-spinning
                 barbeiro.dormir();
             }
         }
@@ -29,7 +29,7 @@ public class Barbearia {
                 Cliente cliente = new Cliente();
                 boolean result = cadeiras.add(cliente);
                 if (result) {
-                    System.out.println("Novo cliente na fila: " + cliente);
+                    System.out.println("Novo cliente [" + cliente.getId() + "] na fila");
                 }
                 else {
                     System.out.println("Barbearia cheia, cliente recusado");
